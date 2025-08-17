@@ -1,0 +1,5 @@
+"Parameter", "Search space"
+"l2", "[0, 10 ** -8, 10 ** -6, 10 ** -4]"
+"learning rate", "[10 ** -2.5, 10 ** -3.5, 10 ** -1.5]"
+"gcn hidden features", "[[128, 128], [256, 256], [128, 64], [256, 128]]"
+"classifier hidden features", "[128, 64, 256]"

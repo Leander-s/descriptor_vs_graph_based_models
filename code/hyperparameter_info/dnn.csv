@@ -1,0 +1,6 @@
+"Parameter", "Search space"
+"l2", "0, 0.01"
+"dropout", "0, 0.5"
+"hidden unit 1", "[64, 128, 256, 512]"
+"hidden unit 2", "[64, 128, 256, 512]"
+"hidden unit 3", "[64, 128, 256, 512]"

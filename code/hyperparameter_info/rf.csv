@@ -1,0 +1,6 @@
+"Parameter", "Search space"
+"n_estimators", "[10, 50, 100, 200, 300, 400, 500]"
+"max_depth", "range(3, 12)"
+"min_samples_leaf", "[1, 3, 5, 10, 20, 50]"
+"min_impurity_decrease", "0, 0.01"
+"max_features", "['sqrt', 'log2', 0.7, 0.8, 0.9]"

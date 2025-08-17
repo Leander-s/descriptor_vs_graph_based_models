@@ -1,0 +1,6 @@
+"Parameter", "Search space"
+"l2", "[0, 10 ** -8, 10 ** -6, 10 ** -4]"
+"learning rate", "[10 ** -2.5, 10 ** -3.5, 10 ** -1.5]"
+"node hidden dim", "[64, 32, 16]"
+"edge hidden dim", "[64, 32, 16]"
+"number layer set2set", "[2, 3, 4]"

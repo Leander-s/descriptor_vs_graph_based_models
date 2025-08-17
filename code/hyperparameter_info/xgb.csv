@@ -1,0 +1,8 @@
+"Parameter", "Search space"
+"learning_rate", "0.01, 0.2"
+"gamma", "0, 0.2"
+"min child weight", "range(1, 6)"
+"subsample", "0.7, 1.0"
+"colsample bytree", "0.7, 1.0"
+"max_depth", "range(3, 10)"
+"n_estimators", "[50, 100, 200, 300, 400, 500, 1000]"
