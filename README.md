@@ -1,4 +1,4 @@
-# Could graph neural networks learn better molecular representation for drug discovery? A comparison study of descriptor-based and graph-based models
+# A fair experimental comparison of four generations of machine learning methods for single-task activity prediction
 
 # Reading the results
 
