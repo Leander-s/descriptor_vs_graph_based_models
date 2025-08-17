@@ -5,16 +5,16 @@ from util import (DescriptorBasedModels,
                   Descriptors,
                   RunParameters,
                   RegressionSets)
-from new_scripts.svm import run_svm
-from new_scripts.svm_wwl import run_svm_wwl
-from new_scripts.rf import run_rf
-from new_scripts.xgb import run_xgb
-from new_scripts.dnn_torch import run_dnn
-from new_scripts.gcn import run_gcn
-from new_scripts.gat import run_gat
-from new_scripts.mpnn import run_mpnn
-from new_scripts.attentivefp import run_attentivefp
-from new_scripts.ensemble import run_ensemble
+from scripts.svm import run_svm
+from scripts.svm_wwl import run_svm_wwl
+from scripts.rf import run_rf
+from scripts.xgb import run_xgb
+from scripts.dnn_torch import run_dnn
+from scripts.gcn import run_gcn
+from scripts.gat import run_gat
+from scripts.mpnn import run_mpnn
+from scripts.attentivefp import run_attentivefp
+from scripts.ensemble import run_ensemble
 import os
 
 
