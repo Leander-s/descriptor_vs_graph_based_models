@@ -6,7 +6,7 @@ from rdkit.Chem import Descriptors
 from rdkit.ML.Descriptors import MoleculeDescriptors
 
 
-def get_descriptors(filepath):
+def get_rdkit_descriptors(filepath):
     df = pd.read_csv(filepath)
     column_count = len(df.columns)
 
@@ -49,7 +49,7 @@ def main():
     name = sys.argv[1]
     filepath = f"../original_datasets/{name}.csv"
 
-    df, time = get_descriptors(filepath)
+    df, time = get_rdkit_descriptors(filepath)
 
     df.to_csv(f"../rdkit_datasets/{name}-rdkit_descriptors.csv", index=False)
 
