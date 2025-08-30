@@ -1,5 +1,7 @@
 import pandas as pd
 from config import Multitask_Datasets
+from drop_missing_values import drop_incomplete_columns
+from util import create_path
 
 
 def isolate_task(df, task, max_tasks):
@@ -22,14 +24,17 @@ def isolate_tasks(dataset_name, amount):
     original_frame = pd.read_csv(original_path)
     try:
         rdkit_frame = pd.read_csv(rdkit_path)
+        create_path(rdkit_path)
     except Exception:
         rdkit_frame = None
     try:
         minimol_frame = pd.read_csv(minimol_path)
+        create_path(minimol_path)
     except Exception:
         minimol_frame = None
     try:
         moe_neutral_frame = pd.read_csv(moe_neutral_path)
+        create_path(moe_neutral_path)
     except Exception:
         moe_neutral_frame = None
 
@@ -40,22 +45,28 @@ def isolate_tasks(dataset_name, amount):
 
     for i in range(1, amount + 1):
         new_frame = isolate_task(original_frame, i, max_tasks)
+        new_frame = drop_incomplete_columns(new_frame)
         path = f"../additional_datasets/original/{dataset_name}{i}.csv"
         new_frame.to_csv(path, index=False)
 
         if rdkit_frame:
             new_rdkit_frame = isolate_task(rdkit_frame, i, max_tasks)
+            new_rdkit_frame = drop_incomplete_columns(new_rdkit_frame)
             new_rdkit_path = f"../additional_datasets/rdkit/{
                 dataset_name}{i}_rdkit_descriptors.csv"
             new_rdkit_frame.to_csv(new_rdkit_path, index=False)
         if minimol_frame:
             new_minimol_frame = isolate_task(minimol_frame, i, max_tasks)
+            new_minimol_frame = drop_incomplete_columns(new_minimol_frame)
             new_minimol_path = f"../additional_datasets/minimol/{
                 dataset_name}{i}_minimol_descriptors.csv"
             new_minimol_frame.to_csv(new_minimol_path, index=False)
         if moe_neutral_frame:
             new_moe_neutral_frame = isolate_task(
                 moe_neutral_frame, i, max_tasks
+            )
+            new_moe_neutral_frame = drop_incomplete_columns(
+                new_moe_neutral_frame
             )
             new_moe_neutral_path = f"../additional_datasets/moe-neutral/{
                 dataset_name}{i}_moe-neutral_descriptors.csv"

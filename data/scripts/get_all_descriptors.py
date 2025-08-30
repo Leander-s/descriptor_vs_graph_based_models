@@ -6,6 +6,9 @@ from minimol import Minimol
 
 
 def get_all_descriptors(dataset) -> (pd.DataFrame, pd.DataFrame):
+    '''
+    -> (rdkit_df, minimol_df)
+    '''
     model = Minimol()
     try:
         time_df = pd.read_csv("descriptor_compute_times.csv")

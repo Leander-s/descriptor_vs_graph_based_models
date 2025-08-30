@@ -26,3 +26,18 @@ def load_dataset(name, descriptors=""):
         print(f"File not found: {path}")
         return None
     return pd.read_csv(path)
+
+
+def create_path(path: str):
+    parts = path.split("/")
+    if "." in parts[-1]:
+        parts.pop(-1)
+
+    prefix = ""
+    for dir in parts:
+        if os.path.isdir(parts):
+            prefix += dir
+            continue
+
+        os.mkdir(dir)
+        prefix += dir
