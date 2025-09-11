@@ -1,25 +1,27 @@
 # generator.yml
 name: generator
 channels:
-  - pytorch
-  - nvidia
   - conda-forge
 dependencies:
-  - python=3.11
-  - numpy
-  - scipy
-  - pandas
-  - scikit-learn
-  - networkx
-  - tqdm
+  - python=3.10
   - pip
+  - pandas
+  - rdkit
   - libstdcxx-ng>=13
   - libgcc-ng>=13
-  - rdkit
-  # Torch + CUDA runtime from pytorch/nvidia
-  - pytorch
-  - pytorch-cuda=12.1
+  - hydra-core
+  - scipy=1.14.1
   - pip:
+      - --index-url https://download.pytorch.org/whl/cu124
+      - --extra-index-url https://pypi.org/simple
+      - torch==2.4.0
+      - torchvision
+      - torchaudio
+      - -f https://data.pyg.org/whl/torch-2.4.0+cu124.html
+      - torch_scatter
+      - torch_sparse
+      - torch_cluster
+      - torch_spline_conv
+      - torch-geometric
+      - graphium==2.4.7
       - minimol
-      - graphium
-

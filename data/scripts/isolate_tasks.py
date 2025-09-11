@@ -52,14 +52,14 @@ def isolate_tasks(dataset_name, amount):
         if rdkit_frame:
             new_rdkit_frame = isolate_task(rdkit_frame, i, max_tasks)
             new_rdkit_frame = drop_incomplete_columns(new_rdkit_frame)
-            new_rdkit_path = f"../additional_datasets/rdkit/{
-                dataset_name}{i}_rdkit_descriptors.csv"
+            new_rdkit_path = ("../additional_datasets/rdkit/"
+                              f"{dataset_name}{i}_rdkit_descriptors.csv")
             new_rdkit_frame.to_csv(new_rdkit_path, index=False)
         if minimol_frame:
             new_minimol_frame = isolate_task(minimol_frame, i, max_tasks)
             new_minimol_frame = drop_incomplete_columns(new_minimol_frame)
-            new_minimol_path = f"../additional_datasets/minimol/{
-                dataset_name}{i}_minimol_descriptors.csv"
+            new_minimol_path = (f"../additional_datasets/minimol/"
+                                f"{dataset_name}{i}_minimol_descriptors.csv")
             new_minimol_frame.to_csv(new_minimol_path, index=False)
         if moe_neutral_frame:
             new_moe_neutral_frame = isolate_task(
@@ -68,8 +68,8 @@ def isolate_tasks(dataset_name, amount):
             new_moe_neutral_frame = drop_incomplete_columns(
                 new_moe_neutral_frame
             )
-            new_moe_neutral_path = f"../additional_datasets/moe-neutral/{
-                dataset_name}{i}_moe-neutral_descriptors.csv"
+            new_moe_neutral_path = ("../additional_datasets/moe-neutral/"
+                                    f"{dataset_name}{i}_moe-neutral_descriptors.csv")
             new_moe_neutral_frame.to_csv(new_moe_neutral_path, index=False)
 
 

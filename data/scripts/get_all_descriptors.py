@@ -5,11 +5,10 @@ import pandas as pd
 from minimol import Minimol
 
 
-def get_all_descriptors(dataset) -> (pd.DataFrame, pd.DataFrame):
+def get_all_descriptors(dataset, model) -> (pd.DataFrame, pd.DataFrame):
     '''
     -> (rdkit_df, minimol_df)
     '''
-    model = Minimol()
     try:
         time_df = pd.read_csv("descriptor_compute_times.csv")
     except FileNotFoundError:
@@ -35,8 +34,9 @@ def get_all_descriptors(dataset) -> (pd.DataFrame, pd.DataFrame):
 
 
 def main():
+    model = Minimol()
     for dataset in Datasets:
-        rdkit_df, minimol_df = get_all_descriptors(dataset)
+        rdkit_df, minimol_df = get_all_descriptors(dataset, model)
         minimol_df.to_csv(
             f"../minimol_datasets/{dataset}-minimol_descriptors.csv",
             index=False)
