@@ -15,6 +15,7 @@ def main():
     model = Minimol()
 
     for original_dataset in OriginalDatasets:
+        print(f"Preparing data for {original_dataset}")
         original_datasets.append(
             pd.read_csv(f"../original_datasets/{original_dataset}.csv")
         )

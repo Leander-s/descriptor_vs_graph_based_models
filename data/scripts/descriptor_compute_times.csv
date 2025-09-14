@@ -1,9 +1,9 @@
 rdkit_time,minimol_time,dataset
-1.07,4.95,freesolv
-2.5,1.43,esol
-17.71,8.19,lipop
-8.47,3.63,bace
-8.08,3.61,bbbp
+1.14,4.77,freesolv
+2.61,1.42,esol
+18.19,7.7,lipop
+8.39,3.43,bace
+8.02,3.41,bbbp
 193.79,74.73,hiv
 7.84,2.91,clintox
 8.03,2.76,sider
