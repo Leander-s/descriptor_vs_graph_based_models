@@ -14,15 +14,25 @@ def main():
 
     model = Minimol()
 
+    if (os.path.isdir("../rdkit_datasets/")):
+        shutil.rmtree("../rdkit_datasets/")
+    if (os.path.isdir("../minimol_datasets/")):
+        shutil.rmtree("../minimol_datasets/")
+    if (os.path.isdir("../additional_datasets/")):
+        shutil.rmtree("../additional_datasets/")
+
+    os.mkdir("../rdkit_datasets")
+    os.mkdir("../minimol_datasets")
+    os.mkdir("../additional_datasets")
+    os.mkdir("../additional_datasets/original")
+    os.mkdir("../additional_datasets/rdkit")
+    os.mkdir("../additional_datasets/minimol")
+
     for original_dataset in OriginalDatasets:
         print(f"Preparing data for {original_dataset}")
         original_datasets.append(
             pd.read_csv(f"../original_datasets/{original_dataset}.csv")
         )
-        shutil.rmtree("../rdkit_datasets/")
-        shutil.rmtree("../minimol_datasets/")
-        os.mkdir("../rdkit_datasets")
-        os.mkdir("../minimol_datasets")
         rdkit_dataset, minimol_dataset = get_all_descriptors(
             original_dataset, model)
         rdkit_dataset.to_csv(
