@@ -51,8 +51,6 @@ conda
 - program dataset generation script that generates all datasets (all 
 descriptors, all additional_datasets with all descriptors) form one main 
 script
-- test all the code, make sure it runs on my machine at least. Some one 
-reproducing probably won't want to just use a docker container but maybe 
-provide one as well
+- fix file system errors. Need to make sure all folders exist
 - give clear instructions for running all the code and generating all the 
 datasets

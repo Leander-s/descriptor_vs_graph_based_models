@@ -1,15 +1,18 @@
 import sys
 import pandas as pd
 from minimol import Minimol
+from rdkit import Chem
 import time
 
 
-def get_minimol_descriptors(model, filepath):
+def get_minimol_descriptors(model: Minimol, filepath: str):
     df = pd.read_csv(filepath)
 
     representation = 'cano_smiles'
 
     smiles = df[representation].to_numpy().tolist()
+    # validating smiles
+    smiles = [s for s in smiles if Chem.MolFromSmiles(s) is not None]
 
     start = time.time()
     features = model(smiles)
