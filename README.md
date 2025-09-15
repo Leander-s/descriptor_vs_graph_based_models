@@ -43,14 +43,10 @@ Scripts to get any non-original datasets
 
 # TODO
 
-This should be gone soon :D.
-- write a requirements.txt with all the dependencies. Also write a script to 
-install a conda environment that satisfies all of them
-- provide detailed instructions to get a functional environment going using 
-conda
 - program dataset generation script that generates all datasets (all 
 descriptors, all additional_datasets with all descriptors) form one main 
 script
-- fix file system errors. Need to make sure all folders exist
+    - This script runs now -> verify that it works
+
 - give clear instructions for running all the code and generating all the 
 datasets
