@@ -46,7 +46,7 @@ Scripts to get any non-original datasets
 - program dataset generation script that generates all datasets (all 
 descriptors, all additional_datasets with all descriptors) form one main 
 script
-    - This script runs now -> verify that it works
+    - run script again -> verify that fix is applied
 
 - give clear instructions for running all the code and generating all the 
 datasets

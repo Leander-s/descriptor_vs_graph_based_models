@@ -36,9 +36,11 @@ def main():
         rdkit_dataset, minimol_dataset = get_all_descriptors(
             original_dataset, model)
         rdkit_dataset.to_csv(
-            f"../rdkit_datasets/{original_dataset}-rdkit_descriptors.csv")
+            f"../rdkit_datasets/{original_dataset}-rdkit_descriptors.csv",
+            index=False)
         minimol_dataset.to_csv(
-            f"../minimol_datasets/{original_dataset}-minimol_descriptors.csv")
+            f"../minimol_datasets/{original_dataset}-minimol_descriptors.csv",
+            index=False)
         rdkit_datasets.append(
             pd.read_csv(
                 f"../rdkit_datasets/{original_dataset}-rdkit_descriptors.csv")
