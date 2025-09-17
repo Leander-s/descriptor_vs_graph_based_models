@@ -7,17 +7,15 @@ channels:
   - dglteam/label/th21_cu121
 dependencies:
   - python=3.11
-  - packaging
-  - pydantic
-  - scikit-learn
-  - xgboost
-  - pip
+  - pydantic=2.10.3
+  - scikit-learn=1.5.1
+  - xgboost=2.1.3
+  - packaging=24.2
   - rdkit=2023.03.2
-  - dgl
   # Torch + CUDA runtime from pytorch/nvidia
   - pytorch=2.1
   - pytorch-cuda=12.1
+  - dglteam/label/th21_cu121::dgl=2.4.0
   - pip:
-      - dgllife
-      - hyperopt
-      - pymongo
+      - dgllife=0.3.2
+      - pymongo=4.10.1
