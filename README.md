@@ -51,7 +51,7 @@ our the study are not available in this repository. All datasets other than
 MOE datasets can be generated using this repository. More instructions on that 
 in [Data](#Data).
 
-<-/-
+<!--
 # TODO
-- Test if run if you can run everything
+ - Test if run if you can run everything
 -->
