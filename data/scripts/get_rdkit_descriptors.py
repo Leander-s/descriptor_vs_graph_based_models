@@ -8,6 +8,7 @@ from rdkit.ML.Descriptors import MoleculeDescriptors
 
 def get_rdkit_descriptors(filepath):
     df = pd.read_csv(filepath)
+    # column_count = len(df.columns)
 
     representation = 'cano_smiles'
 
@@ -16,8 +17,6 @@ def get_rdkit_descriptors(filepath):
     for smile in df[representation]:
         mol = Chem.MolFromSmiles(smile)
         # mol = Chem.AddHs(mol)
-        if mol is None:
-            continue
         mol_list.append(mol)
 
     Desc_list_func = MoleculeDescriptors.MolecularDescriptorCalculator(
@@ -37,8 +36,13 @@ def get_rdkit_descriptors(filepath):
     end = time.time()
     _time = round(end-start, 2)
 
-    feature_df = pd.DataFrame(descriptors)
-    df = pd.concat([df, feature_df], axis=1)
+    df = pd.concat(
+        [df, pd.DataFrame(
+            {descriptor: descriptor_list[index]
+             for index, descriptor in enumerate(descriptors)}
+        )],
+        axis=1
+    )
 
     return df, _time
 
@@ -50,7 +54,7 @@ def main():
     name = sys.argv[1]
     filepath = f"../original_datasets/{name}.csv"
 
-    df, time = get_rdkit_descriptors(filepath)
+    df, time = get_descriptors(filepath)
 
     df.to_csv(f"../rdkit_datasets/{name}-rdkit_descriptors.csv", index=False)
 

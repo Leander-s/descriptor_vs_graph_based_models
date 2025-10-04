@@ -40,9 +40,12 @@ You will first need to install all the packages required to run the code. To do 
     
     micromamba env create -f runner.yml
 
+from the directory of the repository.
+
 ### run.py
 You can execute all the code using the run.py script. Usage is as follows:
 
+    cd code
     python run.py <dataset name> <model name> <descriptors(optional)>
 
 If you are using a graph based model, leave the descriptors argument out. 

@@ -14,7 +14,6 @@ from scripts.gcn import run_gcn
 from scripts.gat import run_gat
 from scripts.mpnn import run_mpnn
 from scripts.attentivefp import run_attentivefp
-from scripts.ensemble import run_ensemble
 import os
 
 
@@ -57,7 +56,7 @@ def interpret_args(argv):
         if not descriptors:
             raise Exception("Need to specify descriptors")
         dataset_path = f"../data/{descriptors}_datasets/"\
-            f"{dataset_name}_{descriptors}_descriptors.csv"
+            f"{dataset_name}-{descriptors}_descriptors.csv"
         if not os.path.isfile(dataset_path):
             dataset_path = f"../data/additional_datasets/{descriptors}/"\
                 f"{dataset_name}_{descriptors}_descriptors.csv"
@@ -99,8 +98,6 @@ def main():
             result, time = run_mpnn(parameters)
         case "attentivefp":
             result, time = run_attentivefp(parameters)
-        case "ensemble":
-            result, time = run_ensemble(parameters)
         case _:
             result, time = None, 0
 
