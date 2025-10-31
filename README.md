@@ -54,6 +54,25 @@ our the study are not available in this repository. All datasets other than
 MOE datasets can be generated using this repository. More instructions on that 
 in [Data](#Data).
 
+# Figures
+
+If you want to create plots from our results or results from your own runs, this is the folder to 
+focus on. To run the models yourself, see [Code](#Code) and [Data](#Data). To use our results, just
+use the fresh repository. Our results are in it by default. To create all the plots used in the 
+paper, go to the figures folder:
+ 
+    cd figures
+
+and run:
+ 
+    ./plot_everything
+
+This could take a while. All the relevant plots are then automatically saved in 
+
+    ./figures/tables
+
+They are available as pdf or png files. We recommend using pdf whenever possible.
+
 <!--
 # TODO
  - Test if run if you can run everything
