@@ -102,16 +102,21 @@ def main():
             result, time = None, 0
 
     if descriptors:
-        result_path = "./stat_res/mogon_results/"\
+        result_path = "../figures/results/"\
             f"{dataset_name}_{model}_{descriptors}_results.csv"
-        time_path = "./stat_res/mogon_results/times/"\
+        time_path = "../figures/times/"\
             f"{dataset_name}_{model}_{descriptors}_time.csv"
 
     else:
-        result_path = "./stat_res/mogon_results/"\
-            f"{dataset_name}_{model}_results.csv"
-        time_path = "./stat_res/mogon_results/times/"\
-            f"{dataset_name}_{model}_time.csv"
+        result_path = "../figures/results/"\
+                      f"{dataset_name}_{model}_results.csv"
+        time_path = "./figures/times/"\
+                    f"{dataset_name}_{model}_time.csv"
+
+    if not os.path.exists("../figures/results"):
+        os.mkdir("../figures/results")
+    if not os.path.exists("../figures/times"):
+        os.mkdir("../figures/times")
 
     result.to_csv(result_path, index=False)
     time_data = {'time': [time]}
