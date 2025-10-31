@@ -76,8 +76,8 @@ def load_data(datasets, models) -> list[list[float]]:
     Rows: Datasets
     Columns: Models
     '''
-    results = pd.read_csv("./summarized_results.csv", index_col=0)
-    errors = pd.read_csv("./summarized_errors.csv", index_col=0)
+    results = pd.read_csv("./results/summarized_results.csv", index_col=0)
+    errors = pd.read_csv("./results/summarized_errors.csv", index_col=0)
     data = []
     for dataset in datasets:
         dataset_data = []
@@ -235,7 +235,7 @@ def remove_na(results, datasets, models):
 
 
 def create_table_from(datasets, models, name):
-    results = pd.read_csv("./summarized_results.csv", index_col=0)
+    results = pd.read_csv("./results/summarized_results.csv", index_col=0)
     data = load_data(datasets, models)
     create_table(data, results, datasets, models, name)
 
@@ -268,7 +268,7 @@ def main():
     create_table_from(True_plus_clintox, Models, "Original but Clintox split")
 
     descriptor_means = pd.read_csv(
-        "./descriptor_means.csv", index_col=0, dtype=str)
+        "../results/descriptor_means.csv", index_col=0, dtype=str)
     descriptors = ["RDKit", "MiniMol", "MOE"]
     create_table(dataframe_to_list(descriptor_means), descriptor_means,
                  Datasets, descriptors, "Ranking by mean descriptor results")

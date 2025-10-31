@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [ ! -d ./tables ]; then
+    mkdir ./tables
+fi
+
+python ./summarize.py
+python ./create_table.py 
+python ./2d_plot.py
+python ./plot_cd_results.py
+python ./plot_times.py
