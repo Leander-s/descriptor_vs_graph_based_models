@@ -42,13 +42,10 @@ def main():
             f"../minimol_datasets/{original_dataset}-minimol_descriptors.csv",
             index=False)
         rdkit_datasets.append(
-            pd.read_csv(
-                f"../rdkit_datasets/{original_dataset}-rdkit_descriptors.csv")
+            rdkit_dataset
         )
         minimol_datasets.append(
-            pd.read_csv(
-                "../minimol_datasets/"
-                f"{original_dataset}-minimol_descriptors.csv")
+            minimol_dataset
         )
         if original_dataset in Multitask_Datasets:
             isolate_tasks(original_dataset, -1)

@@ -16,6 +16,9 @@ def get_rdkit_descriptors(filepath):
 
     for smile in df[representation]:
         mol = Chem.MolFromSmiles(smile)
+        if mol is None:
+            print(f"SMILES {smile} could not be converted to Mol")
+            continue
         # mol = Chem.AddHs(mol)
         mol_list.append(mol)
 
